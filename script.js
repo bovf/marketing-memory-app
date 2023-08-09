@@ -120,8 +120,11 @@ function matchCards(brand1, brand2) {
 
     if (isNameAndSlogan) {
         matched++;
-        if (matched === 16) { // 16 matches for 32 cards
-            setTimeout(shuffleCard, 1000);
+        if (matched === 1) { // 16 matches for 32 cards
+            // TODO: displayVictorySign();, hideVictorySign(); and restart game when user clicks on the victory sign
+            // displayVictorySign();
+            const victorySign = document.querySelector('.victory-sign');
+            victorySign.style.display = 'block';
         }
         cardOne.parentElement.removeEventListener("click", flipCard);
         cardTwo.parentElement.removeEventListener("click", flipCard);
