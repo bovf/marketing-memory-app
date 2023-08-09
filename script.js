@@ -50,7 +50,7 @@ function shuffleCard() {
 
         const backView = document.createElement("div");
         backView.classList.add("view", "back-view");
-        
+
         const brandText = document.createElement('div');
         brandText.className = "brand-text";
         if (i < brands.length) {

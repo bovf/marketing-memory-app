@@ -105,11 +105,14 @@ body {
 }
 
 .card .back-view img {
-    width: 70%;  /* Setting width to 70% to give some space for text */
-    height: auto; /* Adjusting height to maintain image aspect ratio */
-    max-height: 60%; /* Limit the height to 60% of the card */
-    margin-bottom: 5px; /* Spacing between image and text */
+    width: auto;
+    height: auto;
+    max-width: 80%;  
+    max-height: 80%; 
+    margin-bottom: 1px;
+    object-fit: contain;
 }
+
 
 .brand-text {
     text-align: center;
