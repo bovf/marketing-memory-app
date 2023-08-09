@@ -96,13 +96,30 @@ body {
 }
 
 .card .back-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transform: rotateY(-180deg);
     padding: 10px;
 }
+
 .card .back-view img {
-    width: 100%;  /* Setting width to 100% to fit the container width */
-    height: 100%; /* Setting height to 100% to fit the container height */
-    object-fit: contain; /* Ensuring the image maintains its aspect ratio */
+    width: auto;
+    height: auto;
+    max-width: 80%;  
+    max-height: 80%; 
+    margin-bottom: 1px;
+    object-fit: contain;
+}
+
+
+.brand-text {
+    text-align: center;
+    font-size: 0.8rem;  /* Adjust font size for better fit */
+    overflow: hidden;   /* Hide text overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    width: 90%;  /* Set width to 90% of card */
 }
 
 .card.flip .back-view {
@@ -140,3 +157,25 @@ body {
         width: 400px;
     }
 }
+.victory-sign {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: #FFD700; /* Golden color, you can change this */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+    animation: bounceIn 1s;
+}
+
+@keyframes bounceIn {
+    0% { transform: translate(-50%, -60%); opacity: 0; }
+    60% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+

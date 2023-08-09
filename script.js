@@ -30,6 +30,18 @@ function shuffleArray(array) {
     }
 }
 
+function adjustFontSize(element) {
+    const maxLength = 15; // Change this based on your requirement
+    const baseFontSize = 14; // The default font-size you'd want
+
+    if (element.textContent.length > maxLength) {
+        const adjustedSize = baseFontSize * (maxLength / element.textContent.length);
+        element.style.fontSize = `${adjustedSize}px`;
+    } else {
+        element.style.fontSize = `${baseFontSize}px`;
+    }
+}
+
 function shuffleCard() {
     matched = 0;
     disableDeck = false;
@@ -59,8 +71,10 @@ function shuffleCard() {
             brandImage.alt = brand.name;
             backView.appendChild(brandImage);
             brandText.textContent = brand.name;
+            adjustFontSize(brandText);
         } else {
             brandText.textContent = brand.slogan;
+            adjustFontSize(brandText);
         }
         backView.appendChild(brandText);
         
