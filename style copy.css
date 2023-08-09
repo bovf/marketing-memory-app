@@ -96,27 +96,13 @@ body {
 }
 
 .card .back-view {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transform: rotateY(-180deg);
     padding: 10px;
 }
-
 .card .back-view img {
-    width: 70%;  /* Setting width to 70% to give some space for text */
-    height: auto; /* Adjusting height to maintain image aspect ratio */
-    max-height: 60%; /* Limit the height to 60% of the card */
-    margin-bottom: 5px; /* Spacing between image and text */
-}
-
-.brand-text {
-    text-align: center;
-    font-size: 0.8rem;  /* Adjust font size for better fit */
-    overflow: hidden;   /* Hide text overflow */
-    text-overflow: ellipsis; /* Add ellipsis if text is too long */
-    width: 90%;  /* Set width to 90% of card */
+    width: 100%;  /* Setting width to 100% to fit the container width */
+    height: 100%; /* Setting height to 100% to fit the container height */
+    object-fit: contain; /* Ensuring the image maintains its aspect ratio */
 }
 
 .card.flip .back-view {

@@ -54,6 +54,7 @@ function shuffleCard() {
             let brandImage = document.createElement('img');
             brandImage.src = brand.imageSrc;  // Assuming the brand object has a property called imageSrc that stores the URL for the image
             brandImage.alt = brand.name;       // Set the alt text to the brand name for accessibility
+            backView.textContent = brand.name; // Set the text content to the brand name for browsers that don't support images
             backView.appendChild(brandImage);
         } else {
             backView.textContent = brand.slogan;
@@ -68,46 +69,29 @@ function shuffleCard() {
         cards.appendChild(card);
     });
 
-
-    function shuffleTextContents(array) {
+    function shuffleContents(array) {
         for (let i = array.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          // make a const temp to store the text content of the array[i]
-
-          const temp = array[i].textContent;
-          array[i].textContent = array[j].textContent;
-          array[j].textContent = temp;
+          
+          // Swap the entire back view content, which may contain text or images
+          const temp = array[i].querySelector('.back-view').innerHTML;
+          array[i].querySelector('.back-view').innerHTML = array[j].querySelector('.back-view').innerHTML;
+          array[j].querySelector('.back-view').innerHTML = temp;
         }
         
         return array;
       }
-    
-
-    // Shuffle the list items
-    const liList = cards.querySelectorAll("li");
-    const shuffledLiList = shuffleTextContents(liList);
-    cards.innerHTML = ""; // Clear existing cards
-    
-    // Add the shuffled list items back to the ul element
-    for (const cardli of shuffledLiList) {
-        const text = cardli.textContent
-        const card = document.createElement("li");
-        card.classList.add("card");
-        const frontView = document.createElement("div");
-        frontView.classList.add("view", "front-view");
-        frontView.innerHTML = '<img src="images/que_icon.svg" alt="icon">';
-
-        const backView = document.createElement("div");
-        backView.classList.add("view", "back-view");
-        backView.textContent = text;
-
-        card.appendChild(frontView);
-        card.appendChild(backView);
-        card.addEventListener("click", flipCard);
-        cards.appendChild(card);
-        backView.classList.add("view", "back-view");
-        backView.textContent = text;
-    }
+      
+      // Shuffle the list items
+      const liList = cards.querySelectorAll("li");
+      const shuffledLiList = shuffleContents(liList);
+      cards.innerHTML = ""; // Clear existing cards
+      
+      // Add the shuffled list items back to the ul element
+      for (const cardli of shuffledLiList) {
+        cards.appendChild(cardli);
+      }
+      
 
 
 

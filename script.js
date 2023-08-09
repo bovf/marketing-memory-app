@@ -50,15 +50,19 @@ function shuffleCard() {
 
         const backView = document.createElement("div");
         backView.classList.add("view", "back-view");
+        
+        const brandText = document.createElement('div');
+        brandText.className = "brand-text";
         if (i < brands.length) {
             let brandImage = document.createElement('img');
-            brandImage.src = brand.imageSrc;  // Assuming the brand object has a property called imageSrc that stores the URL for the image
-            brandImage.alt = brand.name;       // Set the alt text to the brand name for accessibility
-            backView.textContent = brand.name; // Set the text content to the brand name for browsers that don't support images
+            brandImage.src = brand.imageSrc;
+            brandImage.alt = brand.name;
             backView.appendChild(brandImage);
+            brandText.textContent = brand.name;
         } else {
-            backView.textContent = brand.slogan;
+            brandText.textContent = brand.slogan;
         }
+        backView.appendChild(brandText);
         
         // backView.textContent = i < brands.length ? brand.name : brand.slogan;
         // backView.innerHTML = 'class="view back-view"'+ i < brands.length ? `<img src="images/${brand.name}.png" alt="icon">` : brand.slogan;
