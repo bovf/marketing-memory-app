@@ -134,7 +134,7 @@ function matchCards(brand1, brand2) {
 
     if (isNameAndSlogan) {
         matched++;
-        if (matched === 16) { // 16 matches for 32 cards
+        if (matched === brands.length) { // 16 matches for 32 cards
             // TODO: displayVictorySign();, hideVictorySign(); and restart game when user clicks on the victory sign
             // displayVictorySign();
             const victorySign = document.querySelector('.victory-sign');

@@ -32,8 +32,8 @@ body {
 }
 
 .cards {
-    height: 800px;
-    width: 800px;
+    height: 840px;
+    width: 840px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -45,8 +45,8 @@ body {
     position: relative;
     perspective: 1000px;
     transform-style: preserve-3d;
-    height: calc(100% / 8 - 10px);
-    width: calc(100% / 4 - 10px);
+    height: calc(100% / 8 - 5px);
+    width: calc(100% / 4 - 5px);
     font-size: 14px;
     text-align: center;
     transition: transform 0.3s;
