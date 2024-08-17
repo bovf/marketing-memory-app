@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Bee - Theme Park</title>
+    <script type="text/javascript" src="attractions.js"></script>
     <style>
         /* Global Styles */
         * {
@@ -105,6 +106,48 @@
             margin: 5px 0;
         }
 
+        .rating-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            position: relative;
+            margin: 50px auto;
+            text-align: left;
+        }
+
+        .rating-box .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .rating-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            display: inline-flex;
+            cursor: pointer;
+        }
+
+        .stars i {
+            font-size: 24px;
+            color: #ccc;
+            margin-right: 5px;
+        }
+
+        .stars i.selected {
+            color: #ffc107;
+        }
+
         /* Footer Styles */
         footer {
             background-color: #333;
@@ -173,7 +216,7 @@
 
     <main>
         <h1>Welcome to Golden Bee Theme Park</h1>
-        <p>Get ready for an unforgettable experience filled with fun, adventure, and thrills!</p>
+        <p>Pick where you want to go next!</p>
         
         <div class="attractions">
             <div class="attraction-card">
@@ -211,6 +254,17 @@
                 <h2>WITHOUT GRAVITY</h2>
                 <p>Speed: 6/10</p>
                 <p>Minimum Height: 1.10m</p>
+            </div>
+        </div>
+        <div class="rating-box" id="ratingBox">
+            <button class="close-btn" onclick="closeBox()">×</button>
+            <h3>How much did you enjoy Speed of Sound?</h3>
+            <div class="stars" id="stars">
+                <i class="star" id="star1" onclick="changeColor(1)">★</i>
+                <i class="star" id="star2" onclick="changeColor(2)">★</i>
+                <i class="star" id="star3" onclick="changeColor(3)">★</i>
+                <i class="star" id="star4" onclick="changeColor(4)">★</i>
+                <i class="star" id="star5" onclick="changeColor(5)">★</i>
             </div>
         </div>
     </main>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Bee - Home</title>
+    <script type="text/javascript" src="index.js"></script>
     <style>
         /* Global Styles */
         * {
@@ -29,7 +30,10 @@
             background-color: #ffc107;
             padding: 20px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            height: 100px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         nav {
@@ -38,7 +42,6 @@
             align-items: center;
             width: 90%;
             margin: 0 auto;
-            margin-top: auto;
 
         }
 
@@ -71,6 +74,7 @@
 
         /* Section Styles */
         section {
+            margin: 25px;
             padding: 50px 0;
             width: 90%;
             margin: 0 auto;
@@ -137,7 +141,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 1.25rem;
+            font-size: 2.25rem;
+            font-family: Georgia, 'Times New Roman', Times, serif; 
         }
 
         /* Footer Styles */
@@ -167,6 +172,41 @@
 
         footer ul li a:hover {
             color: #ffc107;
+        }
+
+        #popupMessage {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffc107;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-width: 300px;
+            display: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: left;
+        }
+
+        #popupMessage p {
+            margin-bottom: 10px;
+        }
+
+        #popupMessage button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        #popupMessage button:hover {
+            background-color: #444;
         }
 
         /* Responsive Styles */
@@ -204,6 +244,12 @@
             .attractions img, .food-drinks img {
                 width: 100%;
             }
+
+            #popupMessage {
+                bottom: 10px;
+                right: 10px;
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -234,11 +280,16 @@
     </section>
 
     <section class="food-drinks">
-        <div class="text">Come grab a drink and a burger</div>
+        <div class="text">Come grab a drink and a burger!</div>
         <img src="icecream.jpeg" alt="Food & Drink 1">
         <img src="burger.jpeg" alt="Food & Drink 2">
         <img src="coffee.jpg" alt="Food & Drink 3" >
     </section>
+
+    <div id="popupMessage">
+        <p>Welcome to theme park "Golden Bee". We promise you an amazing experience and unforgettable memories.</p>
+        <button onclick="closePopup()">X</button>
+    </div>
 
     <footer>
         <ul>
