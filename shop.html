@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amusement Park Food &amp; Drinks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background: url('background.webp') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .restaurant-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+        .restaurant-box img {
+            width: 80%; /* Adjust the width here */
+            max-width: 400px; /* Optional: set a maximum width */
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .restaurant-box h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .menu {
+            width: 80%; /* Match width with image */
+            padding: 10px;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd; /* Add border for better visibility */
+            border-radius: 4px; /* Rounded corners */
+            margin-bottom: 10px; /* Space between items */
+            background-color: #f9f9f9; /* Light background color */
+        }
+        .menu-item:nth-child(even) {
+            background-color: #fff; /* Alternate background color for better readability */
+        }
+        .menu-item span {
+            font-weight: bold;
+        }
+        .price {
+            color: #888;
+        }
+        header {
+            background-color: #ffc107;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav img {
+            width: 120px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer ul li {
+            display: inline;
+        }
+
+        footer ul li a {
+            color: #fff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffc107;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            footer ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+  
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.png" alt="Golden Bee Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="shop.html">Eat & Drink</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="restaurant-box">
+            <img src="BBQ.jpeg" alt="BBQ Beee">
+            <h2>BBQ Beee</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <span>BBQ Ribs</span>
+                    <span class="price">$12.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Smoked Brisket</span>
+                    <span class="price">$14.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Grilled Corn</span>
+                    <span class="price">$5.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>BBQ Chicken Wings</span>
+                    <span class="price">$9.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Coleslaw</span>
+                    <span class="price">$3.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Cornbread</span>
+                    <span class="price">$4.49</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-box">
+            <img src="Italian.jpeg" alt="Italian Beee">
+            <h2>Italian Beee</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <span>Margherita Pizza</span>
+                    <span class="price">$11.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Pasta Carbonara</span>
+                    <span class="price">$13.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Garlic Bread</span>
+                    <span class="price">$4.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Lasagna</span>
+                    <span class="price">$15.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Caesar Salad</span>
+                    <span class="price">$7.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Tiramisu</span>
+                    <span class="price">$6.49</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-box">
+            <img src="Vegan.jpeg" alt="Vegan Beee">
+            <h2>Vegan Beee</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <span>Quinoa Salad</span>
+                    <span class="price">$10.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Veggie Burger</span>
+                    <span class="price">$12.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Fruit Smoothie</span>
+                    <span class="price">$6.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Sweet Potato Fries</span>
+                    <span class="price">$5.49</span>
+                </div>
+                <div class="menu-item">
+                    <span>Vegan Wrap</span>
+                    <span class="price">$8.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Chia Pudding</span>
+                    <span class="price">$4.99</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-box">
+            <img src="Drinks.jpeg" alt="Drinking Bee">
+            <h2>Drinking Bee</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <span>Craft Beer</span>
+                    <span class="price">$6.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Honey Ale</span>
+                    <span class="price">$7.49</span>
+                </div>
+                <div class="menu-item">
+                    <span>Bee Smoothie</span>
+                    <span class="price">$5.49</span>
+                </div>
+                <div class="menu-item">
+                    <span>Bee Lemonade</span>
+                    <span class="price">$4.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Sweet Mead</span>
+                    <span class="price">$8.99</span>
+                </div>
+                <div class="menu-item">
+                    <span>Honey Wine</span>
+                    <span class="price">$9.49</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.facebook.com">Follow us on Facebook</a></li>
+            <li><a href="https://www.instagram.com">Follow us on Instagram</a></li>
+        </ul>
+        <p>&copy; 2024 Golden Bee Theme Park. All rights reserved.</p>
+    </footer>
+</body>
+</html>
