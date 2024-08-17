@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Purchase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.webp') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px solid #FFD700; /* Yellow border */
+            position: relative;
+            z-index: 1;
+            /* Removed background image */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .ticket-info {
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .ticket-info h2 {
+            margin-top: 0;
+            color: #000000; /* Black text color */
+        }
+
+        .ticket-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .ticket-info li {
+            padding: 10px 0;
+            border-bottom: 1px solid #dddddd;
+            font-size: 16px;
+        }
+
+        .ticket-info li:last-child {
+            border-bottom: none;
+        }
+
+        .ticket-info span {
+            float: right;
+            font-weight: bold;
+            color: #000000; /* Black text color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 15px;
+            background-color: #000000; /* Black button */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        header {
+            background-color: #ffc107;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav img {
+            width: 120px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer ul li {
+            display: inline;
+        }
+
+        footer ul li a {
+            color: #fff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffc107;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            footer ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+  
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.png" alt="Golden Bee Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="shop.html">Eat & Drink</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="ticket-info">
+            <h2>Ticket Prices</h2>
+            <ul>
+                <li>Children (0-12 years) <span>$5.00</span></li>
+                <li>Teens (13-17 years) <span>$8.00</span></li>
+                <li>Adults (18-64 years) <span>$12.00</span></li>
+                <li>Seniors (65+ years) <span>$7.00</span></li>
+                <li>Family Pass (2 Adults + 2 Children) <span>$30.00</span></li>
+            </ul>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Select Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="child_tickets">Number of Child Tickets (0-12 years)</label>
+                <input type="number" id="child_tickets" name="child_tickets" min="0" max="10" value="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="teen_tickets">Number of Teen Tickets (13-17 years)</label>
+                <input type="number" id="teen_tickets" name="teen_tickets" min="0" max="10" value="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adult_tickets">Number of Adult Tickets (18-64 years)</label>
+                <input type="number" id="adult_tickets" name="adult_tickets" min="0" max="10" value="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senior_tickets">Number of Senior Tickets (65+ years)</label>
+                <input type="number" id="senior_tickets" name="senior_tickets" min="0" max="10" value="0" required>
+            </div>
+
+            <input type="submit" value="Buy Tickets">
+        </form>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.facebook.com">Follow us on Facebook</a></li>
+            <li><a href="https://www.instagram.com">Follow us on Instagram</a></li>
+        </ul>
+        <p>&copy; 2024 Golden Bee Theme Park. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
